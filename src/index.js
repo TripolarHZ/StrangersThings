@@ -18,6 +18,7 @@ const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
   const App = () =>{
 
     const [posts, setPosts] = useState([]);
+    const [postId, setPostId] = useState(null);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -35,7 +36,7 @@ const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
     return <div className = 'app'>
         <h1>Posts</h1>
-        <Create />
+        {postId ? <Update postId={postId} setPostId={setPostId} /> :  <Create/>}
         {
             posts.map(post => <div key={post._id}>
                 <h1>{post.title}</h1>
@@ -43,7 +44,7 @@ const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
                 <h4>Price: {post.price}</h4>
                 <h2>Seller: {post.author.username}</h2>
                 <h4>Location: {post.location}</h4>
-                <button type="button" className="btn btn-outline-primary" >Edit</button>
+                <button type="button" className="btn btn-outline-primary" onClick={()=>setPostId(post._id)} >Edit</button>
                 <button type="button" className="btn btn-outline-danger" >Delete</button>
             </div>)
         }
