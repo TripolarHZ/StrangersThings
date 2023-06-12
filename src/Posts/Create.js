@@ -9,37 +9,39 @@ const Create = () => {
     const [title,setTitle] = useState([]);
     const [description, setDescription] = useState([]);
     const [price,setPrice] = useState([]);
-    const [location, setLocation] = useState([]);
+    const [location, setLocation] = useState("");
     const [willDeliver, setWillDeliver] = useState(false);
 
     const makePost = async (ev) => {
-        ev.preventDefault();
-        try {
-          const response = await fetch(`${BASE_URL}/posts`, {
-            method: "POST",
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify({
-                title:title,
-                description:description,
-                price:price,
-                location:location,
-                willDeliver:willDeliver
-            })
-          });
-          const result = await response.json();
-          console.log(result);
-          setTitle('');
-          setDescription('');
-          setPrice('');
-          setLocation('');
-          setWillDeliver(false);
-        } catch (err) {
-          console.error(err);
-        }
+      ev.preventDefault();
+      try {
+        const response = await fetch(`${BASE_URL}/posts`, {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({
+            post: {
+              title: title,
+              description: description,
+              price: price,
+              location: (location==="")?"[On Request]":location,
+              willDeliver: willDeliver
+            }
+          })
+        });
+        const result = await response.json();
+        console.log(result);
+        setTitle("");
+        setDescription("");
+        setPrice("");
+        setLocation("");
+        setWillDeliver(false);
+      } catch (err) {
+        console.error(err);
       }
+    }
 
     return <>
         <h1>Add New Post</h1>
