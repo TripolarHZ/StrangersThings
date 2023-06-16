@@ -76,6 +76,9 @@ const App = () => {
 
   return <div className='app'>
     <h1>Posts</h1>
+    {/* <Register /> */}
+    <Login />
+
     {postId ? <Update postId={postId} setPostId={setPostId} /> : <Create />}
     {
       posts.map(post => <div key={post._id}>
