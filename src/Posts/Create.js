@@ -66,7 +66,7 @@ const Create = ({posts, setPosts,token}) => {
         <input type='text' placeholder='Location' value={location} onChange=
           {(ev) => setLocation(ev.target.value)}></input>
         <input type='checkbox' className='deliver'/><label style={{ fontSize: '16px' }}>Willing to Deliver?</label>
-        <button onSubmit={makePost} style={{ padding: '14px 28px', backgroundColor: '#008080', border: 'none', color: '#fff', fontSize: '18px', cursor: 'pointer', borderRadius: '4px', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.3)', transition: 'background-color 0.3s ease', marginTop:'50px',textDecoration:'none' }} className="btn btn-outline-primary">CREATE</button>
+        <button type='submit' style={{ padding: '14px 28px', backgroundColor: '#008080', border: 'none', color: '#fff', fontSize: '18px', cursor: 'pointer', borderRadius: '4px', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.3)', transition: 'background-color 0.3s ease', marginTop:'50px',textDecoration:'none' }} className="btn btn-outline-primary">CREATE</button>
       </form>
       {pressed ? (success ? <div style={{padding: '30px',backgroundColor:'blue',marginTop:'30px',borderRadius:'30px',textAlign:'center'}}>
       <p style={{fontSize:'25px',color:'white'}}>You have successfully created the post!</p>

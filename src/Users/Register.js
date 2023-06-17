@@ -46,13 +46,13 @@ const Register = () => {
   }
 
   return <>
-  <div className="signUpContainer" style={{display: 'flex', flexDirection: 'column', justifyContent:'center', alignItems:'center', height: '100vh'}}>
+  <div className="signUpContainer" style={{display: 'flex', flexDirection: 'column', justifyContent:'center', alignItems:'center',marginTop:'100px'}}>
     <h1 style={{ fontSize: '70px', textAlign: 'center', marginBottom: '50px' }}>Sign Up</h1>
     <form onSubmit={registerUser} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <input type='text' placeholder='Username*' value={username} onChange=
-        {(ev) => setUsername(ev.target.value)} style={{ padding: '8px', marginBottom: '30px', fontSize: '16px', width: '400px',height:'30px',borderRadius:'10px' }}></input>
+        {(ev) => setUsername(ev.target.value)} style={{ padding: '8px', marginBottom: '30px', fontSize: '16px', width: '400px',height:'50px',borderRadius:'10px' }}></input>
       <input type='password' placeholder='Password*' value={password} onChange=
-        {(ev) => setPassword(ev.target.value)} style={{ padding: '8px', marginBottom: '10px', fontSize: '16px', width: '400px',height:'30px',borderRadius:'10px' }}></input>
+        {(ev) => setPassword(ev.target.value)} style={{ padding: '8px', marginBottom: '10px', fontSize: '16px', width: '400px',height:'50px',borderRadius:'10px' }}></input>
       <button type="submit" className="btn btn-outline-primary" style={{ padding: '10px', backgroundColor: '#4CAF50', border: 'none', color: '#fff', cursor: 'pointer',marginTop: '30px',width: '200px',height:'50px',fontSize: '25px',borderRadius:'10px' }}>SIGN UP</button>
     </form>
     {pressed ? (success ? <div style={{padding: '30px',backgroundColor:'blue',marginTop:'30px',borderRadius:'30px',textAlign:'center'}}>

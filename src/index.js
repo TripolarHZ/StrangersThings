@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import {
@@ -27,10 +27,10 @@ const App = () => {
     {loggedIn?<Navbar2 setLoggedIn={setLoggedIn}/>:<Navbar1/>}
     <Routes>
     <Route path = "/" element={<Home loggedIn={loggedIn} user={user}/>}></Route>
-    <Route path = "/me" element={<Me token={token}/>}></Route>
+    <Route path = "/me" element={<Me setPostId={setPostId} token={token} user={user}/>}></Route>
     <Route path = "/login" element={<Login setLoggedIn={setLoggedIn} setUser={setUser} setToken={setToken}/>}></Route>
     <Route path = "/register" element={<Register />}></Route>
-    <Route path = "/read" element={<Read posts={posts} setPosts={setPosts} setPostId={setPostId} loggedIn={loggedIn} user={user} token={token}/>}></Route>
+    <Route path = "/read" element={<Read posts={posts} setPosts={setPosts} postId={postId} setPostId={setPostId} loggedIn={loggedIn} user={user} token={token}/>}></Route>
     <Route path = "/update" element={<Update posts={posts} setPosts={setPosts} postId={postId} setPostId={setPostId} token={token}/>}></Route>
     <Route path = "/create" element={<Create posts={posts} setPosts={setPosts} token={token}/>}></Route>
     </Routes>
