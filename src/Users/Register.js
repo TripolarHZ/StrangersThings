@@ -33,12 +33,12 @@ const Register = () => {
       if(result.success===true) {
         setSuccess(true);
         setResultMessage(result.data.message);
+        setUsername('');
       }
       else{
         setSuccess(false);
         setResultMessage(result.error.message);
       }
-      setUsername('');
       setPassword('');
     } catch (err) {
       console.error(err);
@@ -57,12 +57,12 @@ const Register = () => {
     </form>
     {pressed ? (success ? <div style={{padding: '30px',backgroundColor:'blue',marginTop:'30px',borderRadius:'30px',textAlign:'center'}}>
       <p style={{fontSize:'25px',color:'white'}}>{resultMessage}</p>
-      <Link to='/' style={{marginTop:'20px',fontSize:'30px',color:'white',padding:'10px',backgroundColor:'coral',borderRadius:'10px',textDecoration:'none'}}>Go back to login</Link>
+      <Link to='/login' style={{marginTop:'20px',fontSize:'30px',color:'white',padding:'10px',backgroundColor:'coral',borderRadius:'10px',textDecoration:'none'}}>Go back to login</Link>
       </div> : <div style={{padding: '30px',backgroundColor:'blue',marginTop:'30px',borderRadius:'30px',textAlign:'center'}}>
       <p style={{fontSize:'25px',color:'white'}}>{resultMessage}</p>
       <Link to='/register' onClick={()=>setPressed(false)} style={{marginTop:'20px',fontSize:'30px',color:'white',padding:'10px',backgroundColor:'coral',borderRadius:'10px',textDecoration:'none'}}>Try to sign up again</Link>
       <p style={{fontSize:'25px',color:'white'}}>or</p>
-      <Link to='/' style={{marginTop:'20px',fontSize:'30px',color:'white',padding:'10px',backgroundColor:'coral',borderRadius:'10px',textDecoration:'none'}}>Go back to login</Link>
+      <Link to='/login' style={{marginTop:'20px',fontSize:'30px',color:'white',padding:'10px',backgroundColor:'coral',borderRadius:'10px',textDecoration:'none'}}>Go back to login</Link>
       </div>) : <p></p>}
   </div>
   </>

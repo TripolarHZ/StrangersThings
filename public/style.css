@@ -1,0 +1,123 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+}
+
+.nav{
+    background-color: #ADD8E6;
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap:2rem;
+    padding:0 1rem;
+}
+
+.site-title{
+    font-size: 2rem;
+}
+
+.nav ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap:10px;
+    font-size:1.5rem;
+}
+
+.nav a{
+    color: inherit;
+    text-decoration: none;
+    padding:30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+
+.nav li.active{
+    background-color: #8C8CF4;
+}
+
+.nav li:hover{
+    background-color: blue;
+}
+
+.home{
+    text-align: center;
+}
+
+.home h1{
+    font-size:70px;
+}
+
+.home h2{
+    font-size: 50px;
+}
+
+.home a{
+    text-decoration: none;
+    padding: 20px; 
+    background-color: #4CAF50;
+    border: none;
+     color: #fff;
+    cursor: pointer;
+    margin-top: 50px;
+    width: 200px;
+    height:50px;
+    font-size: 25px;
+    border-radius:10px;
+}
+
+.create form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create form input{
+    padding: 12px;
+    margin-bottom: 20px; 
+    font-size: 16px; 
+    width: 400px; 
+    border: none; 
+    border-bottom: 1px solid #ddd;
+    outline: none;
+}
+
+.create form input:focus{
+    border-bottom: 1px solid #8C8CF4;
+}
+
+.create form input:hover{
+    border-bottom: 1px solid  #4CAF50;
+}
+
+.update form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.update form input{
+    padding: 12px;
+    margin-bottom: 20px; 
+    font-size: 16px; 
+    width: 400px; 
+    border: none; 
+    border-bottom: 1px solid #ddd;
+    outline: none;
+}
+
+.update form input:focus{
+    border-bottom: 1px solid #8C8CF4;
+}
+
+.update form input:hover{
+    border-bottom: 1px solid  #4CAF50;
+}
