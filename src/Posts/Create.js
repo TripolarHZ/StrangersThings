@@ -3,10 +3,9 @@ import {Navigate} from 'react-router-dom';
 
 const COHORT_NAME = '2303-ftb-et-web-pt';
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDg1MTdlMDBkYWI1ZjAwMTRmNDMwMGYiLCJ1c2VybmFtZSI6IlRyaXBvbGFySFoiLCJpYXQiOjE2ODY0OTI0MzR9.7rQXtP8Nd39yFogmbmpKB-rdA2PbTZB7mp5Ldfa_23w";
 
 
-const Create = () => {
+const Create = ({posts, setPosts,token}) => {
   const [title, setTitle] = useState([]);
   const [description, setDescription] = useState([]);
   const [price, setPrice] = useState([]);
@@ -39,6 +38,7 @@ const Create = () => {
       setPressed(true);
       if(result.success===true) {
         setSuccess(true);
+        setPosts([result.data.post,...posts]);
         setTitle("");
         setDescription("");
         setPrice("");

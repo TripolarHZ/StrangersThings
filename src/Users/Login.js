@@ -4,7 +4,7 @@ import {Link,Navigate} from 'react-router-dom';
 const COHORT_NAME = '2303-ftb-et-web-pt';
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
-const Login = ({setLoggedIn,setUser}) => {
+const Login = ({setLoggedIn,setUser,setToken}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [success, setSuccess] = useState(false);
@@ -34,6 +34,7 @@ const Login = ({setLoggedIn,setUser}) => {
         setLoggedIn(true);
         setUser(username);
         setUsername('');
+        setToken(result.data.token);
       }
       else{
         setSuccess(false);

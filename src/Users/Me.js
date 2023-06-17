@@ -2,9 +2,8 @@ import React, { useState, useEffect} from 'react';
 
 const COHORT_NAME = '2303-ftb-et-web-pt';
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDg1MTdlMDBkYWI1ZjAwMTRmNDMwMGYiLCJ1c2VybmFtZSI6IlRyaXBvbGFySFoiLCJpYXQiOjE2ODY0NDQwMDB9.r5gE_SAsHPUT5tppZOJgb9_ORKpaYQUJk0L2Iu6jy8Y";
 
-const Me = () => {
+const Me = ({token}) => {
     const [posts, setPosts] = useState([]);
     const [messages, setMessages] = useState([]);
     const [userName, setUsername] = useState([]);
