@@ -76,8 +76,11 @@ const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDg1MTdlMDBkYWI1Z
 
     return <div className = 'app'>
         <h1>Posts</h1>
-        {postId ? <Update postId={postId} setPostId={setPostId} /> :  <Create/>}
-        {
+        <Register />
+        <Login />
+        
+        {/*postId ? <Update postId={postId} setPostId={setPostId} /> :  <Create/>*/}
+        {/*
             posts.map(post => <div key={post._id}>
                 <h1>{post.title}</h1>
                 <p>{post.description}</p>
@@ -88,6 +91,7 @@ const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDg1MTdlMDBkYWI1Z
                 <button type="button" className="btn btn-outline-danger" onClick={() => handleDelete(post._id)}>Delete</button>
                 <button type="button" className="btn btn-outline-primary" onClick={()=>postMessage(post._id)} >Message</button>
             </div>)
+            */
         }
     </div>
   }
