@@ -121,3 +121,27 @@ body{
 .update form input:hover{
     border-bottom: 1px solid  #4CAF50;
 }
+
+.posts{
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.posts h2{
+    color:#8C8CF4;
+}
+
+.price{
+    color:red;
+}
+
+.message{
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}

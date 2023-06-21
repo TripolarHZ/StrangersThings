@@ -54,15 +54,14 @@ const Me = ({ setPostId, token, user }) => {
   }
 
   return <>
-    <h1 style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>Welcome {userName}</h1>
-    <p style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>User ID: {id}</p>
-    <h2 style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>My Posts:</h2>
+    <h1 style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', fontSize: "60px" }}>Welcome {userName}</h1>
+    <p style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', fontSize: "20px"  }}>User ID: {id}</p>
+    <h2 style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', fontSize: "40px"  }}>My Posts:</h2>
     {
-      posts.map(post => (post.active === true) ? <div key={post._id}>
+      posts.map(post => (post.active === true) ? <div className='posts' key={post._id}>
         <h1>{post.title}</h1>
         <p>{post.description}</p>
-        <h4>Price: {post.price}</h4>
-        <h2>Seller: {userName}</h2>
+        <h4 className='price'>Price: {post.price}</h4>
         <h4>Location: {post.location}</h4>
         <Link to='/update' onClick={() => { setPostId(post._id) }} style={{ padding: '14px 28px', backgroundColor: 'blue', border: 'none', color: '#fff', fontSize: '18px', cursor: 'pointer', borderRadius: '4px', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.3)', transition: 'background-color 0.3s ease', textDecoration: 'none', marginRight: '20px', width: '100px' }}>Edit</Link>
         <button type="button" className="btn btn-outline-danger" onClick={() => deletePost(post._id)} style={{ padding: '14px 28px', backgroundColor: 'red', border: 'none', color: '#fff', fontSize: '18px', cursor: 'pointer', borderRadius: '4px', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.3)', transition: 'background-color 0.3s ease', textDecoration: 'none', width: '100px' }}>Delete</button>
